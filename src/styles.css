@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@theme {
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+.tagline-cursive {
+  font-family: "Adventures Unlimited", "Adventure Unlimited", "Pacifico", "Brush Script MT", cursive;
+  letter-spacing: 0.01em;
+}
+
+.hero-section {
+  background-position: right 1rem top 52%;
+  background-size: auto 96%;
+}
+
+.hero-section-mobile {
+  background-position: right -2.5rem top 1.25rem;
+  background-size: 78% auto;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    background-position: right -2.5rem top 58%;
+    background-size: 68% auto;
+    min-height: 27rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-position: center bottom 0.25rem;
+    background-size: 96% auto;
+    min-height: 32rem;
+    padding-bottom: 11rem;
+  }
+
+  .hero-section-mobile {
+    background-position: right -2.25rem top 1.75rem;
+    background-size: 82% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    background-position: center bottom;
+    background-size: 112% auto;
+    min-height: 34rem;
+    padding-bottom: 11.5rem;
+  }
+
+  .hero-section-mobile {
+    background-position: right -2rem top 1.75rem;
+    background-size: 88% auto;
+  }
+}
