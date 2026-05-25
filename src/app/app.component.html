@@ -1,330 +1,115 @@
-<section class="relative overflow-hidden bg-gradient-to-b from-[#f7fbe9] via-[#eef7de] to-[#e3f0cd] text-slate-800">
-
-  <div class="mx-auto w-full max-w-none px-0.5 pb-8 pt-3 sm:px-1 lg:px-8">
+<div
+  class="page-shell min-h-screen bg-gradient-to-b from-[#f8fbea] via-[#f0f7e4] to-[#e5efd6] text-slate-800"
+  [class.page-ready]="pageReady"
+  [class.is-resizing]="isResizing"
+  [class.layout-pulse]="layoutPulse">
+  <div class="layout-fluid mx-auto w-full max-w-[1800px] px-3 pb-10 pt-4 sm:px-5 lg:px-8">
 
     <!-- NAVBAR -->
-    <nav class="sticky top-3 z-50 rounded-[2rem] bg-white/95 px-2 py-3 shadow-lg backdrop-blur lg:px-4">
-
-      <!-- MOBILE -->
-      <div class="flex items-center justify-between lg:hidden">
-
-        <button class="text-green-900">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    <nav class="animate-nav layout-section sticky top-3 z-50 rounded-2xl border border-white/60 bg-white/95 px-4 py-3 shadow-md backdrop-blur-md lg:rounded-3xl lg:px-6">
+      <div class="flex items-center justify-between gap-4 lg:hidden">
+        <button type="button" class="rounded-lg p-2 text-green-900 hover:bg-green-50" aria-label="Open menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
-        <img src="assets/logo.png" alt="logo" class="h-14 w-auto object-contain">
-
-        <div class="flex items-center gap-2">
-
-          <button class="text-slate-800">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M5.121 17.804A9 9 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <a routerLink="/">
+          <img src="assets/logo.png" alt="Mondragon logo" class="h-14 w-auto object-contain" />
+        </a>
+        <div class="flex items-center gap-1">
+          <button type="button" class="rounded-full p-2 hover:bg-green-50" aria-label="Account">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" d="M5.121 17.804A9 9 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </button>
-
-          <button class="relative text-slate-800">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1 5h13" />
+          <button type="button" class="relative rounded-full p-2 hover:bg-green-50" aria-label="Cart">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1 5h13" />
             </svg>
-
-            <span
-              class="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-[11px] font-bold text-white">
-              2
-            </span>
+            <span class="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-green-600 text-[10px] font-bold text-white">2</span>
           </button>
-
         </div>
       </div>
 
-      <!-- DESKTOP -->
-      <div class="hidden items-center justify-between lg:flex">
-
-        <img src="assets/logo.png" alt="logo" class="h-16 w-auto object-contain">
-
-        <ul class="flex items-center gap-10 text-sm font-semibold tracking-wide text-slate-700">
-
-          <li class="border-b-2 border-green-600 pb-1 text-green-700">
-            HOME
+      <div class="hidden items-center justify-between gap-6 lg:flex">
+        <a routerLink="/">
+          <img src="assets/logo.png" alt="Mondragon logo" class="h-16 w-auto object-contain" />
+        </a>
+        <ul class="flex items-center gap-8 text-base font-semibold tracking-wide text-slate-700 lg:text-lg">
+          <li>
+            <a routerLink="/" routerLinkActive="border-b-2 border-green-600 pb-0.5 text-green-700" [routerLinkActiveOptions]="{ exact: true }" class="transition hover:text-green-700">HOME</a>
           </li>
-
-          <li class="cursor-pointer hover:text-green-700">
-            PRODUCTS
+          <li>
+            <a routerLink="/products" routerLinkActive="border-b-2 border-green-600 pb-0.5 text-green-700" class="transition hover:text-green-700">PRODUCTS</a>
           </li>
-
-          <li class="cursor-pointer hover:text-green-700">
-            ABOUT US
+          <li><a href="#" class="transition hover:text-green-700">ABOUT US</a></li>
+          <li><a href="#" class="transition hover:text-green-700">RECIPES</a></li>
+          <li>
+            <a routerLink="/" fragment="contact" class="transition hover:text-green-700">CONTACT</a>
           </li>
-
-          <li class="cursor-pointer hover:text-green-700">
-            RECIPES
-          </li>
-
-          <li class="cursor-pointer hover:text-green-700">
-            CONTACT
-          </li>
-
         </ul>
-
-        <div class="flex items-center gap-3">
-
-          <button class="rounded-full p-2 transition hover:bg-green-50">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M5.121 17.804A9 9 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <div class="flex items-center gap-2">
+          <button type="button" class="rounded-full p-2 transition hover:bg-green-50" aria-label="Account">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" d="M5.121 17.804A9 9 0 1118.88 17.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </button>
-
-          <button class="relative rounded-full p-2 transition hover:bg-green-50">
-
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
-                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1 5h13" />
+          <button type="button" class="relative rounded-full p-2 transition hover:bg-green-50" aria-label="Cart">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1 5h13" />
             </svg>
-
-            <span
-              class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-xs font-bold text-white">
-              2
-            </span>
-
+            <span class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-green-600 text-xs font-bold text-white">2</span>
           </button>
-
         </div>
-
       </div>
-
     </nav>
 
-    <!-- HERO -->
-    <section
-      class="relative mt-4 overflow-hidden rounded-[2.5rem] bg-cover bg-center px-2 py-10 sm:px-3 sm:py-14 lg:min-h-[42rem] lg:px-6 lg:py-16">
-
-      <div class="relative z-10 max-w-[22rem] lg:max-w-[90rem] left-40">
-
-        <h1 class="font-black leading-none text-green-950">
-
-          <span class="block text-[3rem] sm:text-[4rem] lg:text-[7rem]">
-            Appetizer for all
-          </span>
-
-          <span class="block text-[2.7rem] sm:text-[3.5rem] lg:text-[4.5rem]">
-            
-          </span>
-
-          <span class="block text-[3.2rem] text-lime-600 sm:text-[4.5rem] lg:text-[10rem]">
-            SEASON
-          </span>
-
-        </h1>
-
-        <p class="tagline-cursive mt-3 text-2xl italic text-green-900 sm:text-3xl lg:text-4xl font-light">
-          Bold Flavors. All Year Round.
-        </p>
-
-       
-
-        <p class="mt-5 max-w-md text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg">
-          From our farm to your table. Made with natural ingredients and crafted for every Filipino flavor.
-        </p>
-
-        <button
-          class="mt-6 inline-flex items-center gap-2 rounded-full bg-green-700 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-green-800 lg:px-8 lg:py-4">
-          SHOP NOW →
-        </button>
-
-      </div>
-      <img src="/assets/main-products-table.png" alt="Products" class="
-      pointer-events-none
-      absolute
-      bottom-0
-      right-[-120px]
-      w-[520px]
-      max-w-none
-      sm:right-[-80px]
-      sm:w-[650px]
-      md:right-[-80px]
-      md:w-[800px]
-      lg:right-[-40px]
-      lg:w-[700px]
-      xl:left-50
-      xl:top-60
-      xl:w-[900px]
-
-      2xl:right-1000
-      2xl:top-50
-      2xl:w-[1000px]
-      3xl:right-1000
-      3xl:top-0
-      3xl:w-[2000px]
-    ">
-    </section>
-
-    <!-- SINANTULAN -->
-    <section class="mt-0 rounded-[2rem] bg-white/80 p-2 shadow-lg ring-1 ring-white/80 sm:p-3">
-
-      <div class="grid gap-4 lg:grid-cols-5">
-
-        <!-- TITLE -->
-        <div
-          class="rounded-[2rem] bg-gradient-to-br from-green-50 to-lime-100 p-5 lg:flex lg:flex-col lg:justify-center">
-
-          <h2 class="text-4xl font-black text-green-900 lg:text-4xl">
-            SINANTULAN
-          </h2>
-
-          <p class="mt-3 text-base text-slate-600 lg:text-lg">
-            The perfect partner for every dish.
-          </p>
-
-        </div>
-
-        <!-- PRODUCTS -->
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:col-span-4">
-
-          <article class="overflow-hidden rounded-[1.5rem] bg-white shadow-md transition hover:-translate-y-1">
-
-            <img src="assets/originalspicy.png" class="h-40 w-full object-cover lg:h-52">
-
-            <p class="bg-red-600 py-7 text-center text-lg font-bold text-white sm:text-md">
-              Spicy
-            </p>
-
-          </article>
-
-          <article class="overflow-hidden rounded-[1.5rem] bg-white shadow-md transition hover:-translate-y-1">
-
-            <img src="assets/original.jpg" class="h-40 w-full object-cover lg:h-52">
-
-            <p class="bg-green-700 py-2 text-center text-sm font-bold text-white sm:text-base">
-              Original
-            </p>
-
-          </article>
-
-          <article class="overflow-hidden rounded-[1.5rem] bg-white shadow-md transition hover:-translate-y-1">
-
-            <img src="assets/originalmilk.jpg" class="h-40 w-full object-cover lg:h-52">
-
-            <p class="bg-amber-500 py-2 text-center text-sm font-bold text-white sm:text-base">
-              Pure
-            </p>
-
-          </article>
-
-          <article class="overflow-hidden rounded-[1.5rem] bg-white shadow-md transition hover:-translate-y-1">
-
-            <img src="assets/speciallaing.jpg" class="h-40 w-full object-cover lg:h-52">
-
-            <p class="bg-emerald-700 py-2 text-center text-sm font-bold text-white sm:text-base">
-              Other Variants
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- DESSERT -->
-    <section class="mt-5 rounded-[2rem] bg-white/80 px-4 py-2 shadow-lg ring-1 ring-white/80 sm:px-6 sm:py-3">
-
-      <div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-
-        <!-- TEXT -->
-        <div class="max-w-sm">
-
-          <h2 class="text-4xl font-black text-green-900 lg:text-5xl">
-            DESSERT
-            <span class="text-2xl font-medium">
-              for
-            </span>
-          </h2>
-
-          <p class="text-3xl italic text-green-800 lg:text-5xl">
-            <span class="tagline-cursive font-extralight">
-              all
-            </span>
-
-            <span class="text-7xl font-black not-italic text-lime-600">
-              SEASON
-            </span>
-          </p>
-
-          <p class="mt-4 text-sm leading-relaxed text-slate-700 lg:text-lg">
-            Naturally delicious. Made for everyone.
-          </p>
-
-          <button
-            class="mt-5 inline-flex items-center gap-2 rounded-full bg-green-700 px-6 py-3 text-sm font-semibold text-white transition hover:bg-green-800">
-            SHOP NOW →
-          </button>
-
-        </div>
-
-        <!-- PRODUCTS -->
-        <div class="grid flex-1 grid-cols-2 gap-4 lg:grid-cols-4">
-
-          <div class="text-center">
-            <img src="assets/jackfruit.png" class="mx-auto h-36 object-contain lg:h-52">
-
-            <p class="mt-2 text-xl italic text-green-900 lg:text-3xl">
-              Jackfruit
-            </p>
-          </div>
-
-          <div class="text-center">
-            <img src="assets/macapuno.png" class="mx-auto h-36 object-contain lg:h-52">
-
-            <p class="mt-2 text-xl italic text-green-900 lg:text-3xl">
-              Pure Macapuno
-            </p>
-          </div>
-
-          <div class="text-center">
-            <img src="assets/ube-jam.png" class="mx-auto h-36 object-contain lg:h-52">
-
-            <p class="mt-2 text-xl italic text-green-900 lg:text-3xl">
-              Ube Jam
-            </p>
-          </div>
-
-          <div class="text-center">
-            <img src="assets/nata-de-coco.png" class="mx-auto h-36 object-contain lg:h-52">
-
-            <p class="mt-2 text-xl italic text-green-900 lg:text-3xl">
-              Nata de Coco
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
+    <router-outlet />
 
     <!-- FOOTER -->
-    <footer
-      class="mt-5 grid grid-cols-2 gap-2 rounded-[2rem] bg-green-900 px-2 py-5 text-center text-xs font-semibold text-white sm:grid-cols-4 sm:text-sm">
-
-      <span>NATURAL INGREDIENTS</span>
-
-      <span>FARM TO YOUR TABLE</span>
-
-      <span>CRAFTED FOR FILIPINO FLAVOR</span>
-
-      <span>MADE WITH CARE</span>
-
+    <footer class="layout-section animate-on-enter enter-delay-8 mt-6 rounded-3xl bg-green-950 px-5 py-10 text-white sm:px-8 lg:px-12">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="sm:col-span-2 lg:col-span-1">
+          <img src="assets/logo.png" alt="Mondragon logo" class="h-14 w-auto object-contain" />
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-green-100/90">
+            Mondragon Food Products — bold Filipino flavors from our farm to your table, all year round.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-lime-300">Shop</h3>
+          <ul class="mt-3 space-y-2 text-sm text-green-100/90">
+            <li><a routerLink="/products" fragment="sinantulan" class="transition hover:text-white">Sinantulan</a></li>
+            <li><a routerLink="/products" fragment="dessert" class="transition hover:text-white">Desserts</a></li>
+            <li><a routerLink="/products" class="transition hover:text-white">All Products</a></li>
+            <li><a href="#" class="transition hover:text-white">Recipes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-lime-300">Company</h3>
+          <ul class="mt-3 space-y-2 text-sm text-green-100/90">
+            <li><a href="#" class="transition hover:text-white">About Us</a></li>
+            <li><a routerLink="/" fragment="contact" class="transition hover:text-white">Contact</a></li>
+            <li><a href="#" class="transition hover:text-white">FAQs</a></li>
+            <li><a href="#" class="transition hover:text-white">Shipping</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-bold uppercase tracking-wider text-lime-300">Connect</h3>
+          <ul class="mt-3 space-y-2 text-sm text-green-100/90">
+            <li><a href="#" class="transition hover:text-white">Facebook</a></li>
+            <li><a href="#" class="transition hover:text-white">Instagram</a></li>
+            <li><a href="mailto:hello@mondragonfood.com" class="transition hover:text-white">hello&#64;mondragonfood.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/15 pt-6 text-center text-xs text-green-200/80 sm:flex-row sm:text-left">
+        <p>© {{ currentYear }} Mondragon Food Products. All rights reserved.</p>
+        <div class="flex gap-4">
+          <a href="#" class="transition hover:text-white">Privacy</a>
+          <a href="#" class="transition hover:text-white">Terms</a>
+        </div>
+      </div>
     </footer>
 
   </div>
-
-</section>
+</div>

@@ -1,0 +1,128 @@
+<div class="mt-5 space-y-10 pb-4">
+  <!-- Page hero -->
+  <section class="overflow-hidden rounded-3xl bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 px-6 py-12 text-white sm:px-10 sm:py-14">
+    <p class="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
+      Our collection
+    </p>
+    <h1 class="mt-4 max-w-3xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Products</h1>
+    <p class="mt-4 max-w-2xl text-sm leading-relaxed text-green-100/90 sm:text-base lg:text-lg">
+      Discover our sinantulan line for everyday meals and our dessert preserves made from locally sourced fruits and
+      coconuts — crafted in Mondragon with care.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a
+        href="#sinantulan"
+        class="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-green-950 transition hover:bg-lime-300">
+        Sinantulan
+      </a>
+      <a
+        href="#dessert"
+        class="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10">
+        Desserts
+      </a>
+    </div>
+  </section>
+
+  <!-- Sinantulan -->
+  <section id="sinantulan" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Appetizers</p>
+      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Sinantulan</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+        A beloved Filipino condiment made from santol — tangy, savory, and made to elevate rice, grilled dishes, and
+        everyday ulam. Choose your heat level and find your household favorite.
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      @for (product of sinantulanProducts; track product.id) {
+        <article class="product-showcase-card overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-green-100/80">
+          <div class="grid sm:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr]">
+            <div class="overflow-hidden bg-gradient-to-br from-green-50 to-lime-100 sm:min-h-full">
+              <img [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover sm:h-full sm:min-h-[13rem]" />
+            </div>
+            <div class="flex flex-col p-5 sm:p-6">
+              <h3 class="text-2xl font-black text-green-900">{{ product.label }}</h3>
+              @if (product.size) {
+                <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">{{ product.size }}</p>
+              }
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">{{ product.description }}</p>
+              <ul class="mt-4 space-y-1.5">
+                @for (point of product.highlights; track point) {
+                  <li class="flex items-start gap-2 text-sm text-slate-700">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-500"></span>
+                    {{ point }}
+                  </li>
+                }
+              </ul>
+              <button
+                type="button"
+                class="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-green-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800">
+                Inquire Now!
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- Dessert -->
+  <section id="dessert" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Preserves</p>
+      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Dessert</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+        Naturally delicious fruit and coconut preserves for snacking, halo-halo, pastries, and gifting — made for
+        everyone and perfect all season.
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      @for (product of dessertProducts; track product.id) {
+        <article class="product-showcase-card overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-amber-100/80">
+          <div class="grid sm:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr]">
+            <div class="overflow-hidden rounded-t-3xl bg-gradient-to-br from-amber-50 to-lime-50 sm:rounded-tr-none sm:rounded-l-3xl">
+              <img [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover object-top sm:h-full sm:min-h-[13rem]" />
+            </div>
+            <div class="flex flex-col p-5 sm:p-6">
+              <h3 class="tagline-cursive text-2xl text-green-900 sm:text-3xl">{{ product.label }}</h3>
+              @if (product.size) {
+                <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">{{ product.size }}</p>
+              }
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">{{ product.description }}</p>
+              <ul class="mt-4 space-y-1.5">
+                @for (point of product.highlights; track point) {
+                  <li class="flex items-start gap-2 text-sm text-slate-700">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400"></span>
+                    {{ point }}
+                  </li>
+                }
+              </ul>
+              <button
+                type="button"
+                class="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-green-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800">
+                Inquire Now!
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="rounded-3xl bg-gradient-to-r from-lime-100 to-green-50 px-6 py-10 text-center sm:px-10">
+    <h2 class="text-2xl font-black text-green-900 sm:text-3xl">Questions about our products?</h2>
+    <p class="mx-auto mt-2 max-w-lg text-sm text-slate-600 sm:text-base">
+      Reach out for bulk orders, availability, or wholesale inquiries.
+    </p>
+    <a
+      routerLink="/"
+      fragment="contact"
+      class="mt-6 inline-flex items-center gap-2 rounded-full bg-green-700 px-7 py-3 text-sm font-semibold text-white transition hover:bg-green-800">
+      Contact us
+      <span aria-hidden="true">→</span>
+    </a>
+  </section>
+</div>
