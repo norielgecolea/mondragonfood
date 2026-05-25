@@ -17,6 +17,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,8 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build for GitHub Pages
+      - name: Build Angular app
         run: npm run build -- --configuration production --base-href /
+
+      - name: Add CNAME
+        run: echo "mondragonfood.norielgecolea.com" > dist/frontend/browser/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -41,9 +45,11 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
