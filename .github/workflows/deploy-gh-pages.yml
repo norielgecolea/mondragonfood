@@ -31,7 +31,7 @@ jobs:
         run: npm ci
 
       - name: Build for GitHub Pages
-        run: npm run build -- --configuration production --base-href /mondragonfood/
+        run: npm run build -- --configuration production --base-href /
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
