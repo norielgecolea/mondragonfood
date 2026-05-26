@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DESSERT_PRODUCTS, SINANTULAN_PRODUCTS } from '../../data/products.data';
+import { SkeletonImageDirective } from '../../shared/skeleton-image.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SkeletonImageDirective],
   templateUrl: './home.component.html',
 })
 export class HomeComponent {

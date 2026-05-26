@@ -8,3 +8,56 @@
   font-family: "Adventures Unlimited", "Adventure Unlimited", "Pacifico", "Brush Script MT", cursive;
   letter-spacing: 0.01em;
 }
+
+@keyframes imageSkeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+a.img-skeleton-wrap {
+  display: inline-block;
+}
+
+span.img-skeleton-wrap {
+  display: block;
+  width: 100%;
+}
+
+.img-skeleton-wrap {
+  background-color: #e5e7eb;
+  background-image: linear-gradient(90deg, rgba(229, 231, 235, 0.9) 0%, rgba(243, 244, 246, 0.95) 45%, rgba(229, 231, 235, 0.9) 100%);
+  background-size: 220% 100%;
+  animation: imageSkeletonShimmer 1.2s ease-in-out infinite;
+}
+
+.img-skeleton-wrap:not(.img-skeleton-loaded) > img {
+  opacity: 0 !important;
+}
+
+.img-skeleton-wrap > img {
+  transition: opacity 0.25s ease;
+}
+
+.img-skeleton-wrap.img-skeleton-loaded {
+  animation: none;
+  background-image: none;
+  background-color: transparent;
+}
+
+.img-skeleton-wrap.img-skeleton-loaded > img {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img-skeleton-wrap {
+    animation: none;
+  }
+
+  .img-skeleton-wrap > img {
+    transition: none;
+  }
+}

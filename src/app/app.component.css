@@ -137,12 +137,17 @@
   transform: translateY(-2px);
 }
 
+.mobile-nav-panel {
+  animation: enterFadeDown 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .page-ready .animate-on-enter,
   .page-ready .animate-nav,
   .page-ready .animate-hero-text,
   .page-ready .animate-hero-image,
-  .layout-pulse .layout-section {
+  .layout-pulse .layout-section,
+  .mobile-nav-panel {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;

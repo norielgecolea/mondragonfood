@@ -10,20 +10,20 @@
       coconuts — crafted in Mondragon with care.
     </p>
     <div class="mt-8 flex flex-wrap gap-3">
-      <a
-        href="#sinantulan"
-        class="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-green-950 transition hover:bg-lime-300">
+      <button type="button" [class]="filterButtonClass('all')" (click)="setFilter('all')">
+        All Products
+      </button>
+      <button type="button" [class]="filterButtonClass('sinantulan')" (click)="setFilter('sinantulan')">
         Sinantulan
-      </a>
-      <a
-        href="#dessert"
-        class="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10">
+      </button>
+      <button type="button" [class]="filterButtonClass('dessert')" (click)="setFilter('dessert')">
         Desserts
-      </a>
+      </button>
     </div>
   </section>
 
   <!-- Sinantulan -->
+  @if (activeFilter === 'all' || activeFilter === 'sinantulan') {
   <section id="sinantulan" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
     <div class="mb-8 max-w-3xl">
       <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Appetizers</p>
@@ -39,7 +39,7 @@
         <article class="product-showcase-card overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-green-100/80">
           <div class="grid sm:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr]">
             <div class="overflow-hidden bg-gradient-to-br from-green-50 to-lime-100 sm:min-h-full">
-              <img [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover sm:h-full sm:min-h-[13rem]" />
+              <img appSkeletonImg [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover sm:h-full sm:min-h-[13rem]" />
             </div>
             <div class="flex flex-col p-5 sm:p-6">
               <h3 class="text-2xl font-black text-green-900">{{ product.label }}</h3>
@@ -66,8 +66,10 @@
       }
     </div>
   </section>
+  }
 
   <!-- Dessert -->
+  @if (activeFilter === 'all' || activeFilter === 'dessert') {
   <section id="dessert" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
     <div class="mb-8 max-w-3xl">
       <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Preserves</p>
@@ -83,7 +85,7 @@
         <article class="product-showcase-card overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-amber-100/80">
           <div class="grid sm:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr]">
             <div class="overflow-hidden rounded-t-3xl bg-gradient-to-br from-amber-50 to-lime-50 sm:rounded-tr-none sm:rounded-l-3xl">
-              <img [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover object-top sm:h-full sm:min-h-[13rem]" />
+              <img appSkeletonImg [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover object-top sm:h-full sm:min-h-[13rem]" />
             </div>
             <div class="flex flex-col p-5 sm:p-6">
               <h3 class="tagline-cursive text-2xl text-green-900 sm:text-3xl">{{ product.label }}</h3>
@@ -110,6 +112,7 @@
       }
     </div>
   </section>
+  }
 
   <!-- CTA -->
   <section class="rounded-3xl bg-gradient-to-r from-lime-100 to-green-50 px-6 py-10 text-center sm:px-10">

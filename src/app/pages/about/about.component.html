@@ -1,0 +1,116 @@
+<div class="mt-5 space-y-10 pb-4">
+  <section class="overflow-hidden rounded-3xl bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 px-6 py-12 text-white sm:px-10 sm:py-14">
+    <p class="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
+      About us
+    </p>
+    <h1 class="mt-4 max-w-3xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Rooted in tradition, built for today.</h1>
+    <p class="mt-4 max-w-3xl text-sm leading-relaxed text-green-100/90 sm:text-base lg:text-lg">
+      Mondragon Food Products brings authentic Filipino flavor to modern tables. We work with local ingredients, trusted
+      processes, and a team committed to consistency in every batch.
+    </p>
+  </section>
+
+  <section class="rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Our journey</p>
+      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">History</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+        From a family kitchen to a growing food brand in Mondragon, our story is guided by quality, service, and Filipino
+        heritage.
+      </p>
+    </div>
+
+    <div class="history-timeline space-y-6">
+      @for (item of historyTimeline; track item.year) {
+        <article class="history-item history-item-grid rounded-2xl bg-gradient-to-br from-white via-lime-50/30 to-green-50/50 p-4 ring-1 ring-green-100 sm:p-5">
+          <div class="history-left">
+            <div class="history-dot"></div>
+            <div class="history-year inline-flex w-fit rounded-full bg-green-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-green-800">
+              {{ item.year }}
+            </div>
+          </div>
+          <div class="history-main">
+            <div>
+              <h3 class="text-lg font-bold text-green-900 sm:text-xl">{{ item.title }}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-slate-600 sm:text-base">{{ item.description }}</p>
+            </div>
+            <div class="history-media-wrap mt-4">
+              <div class="history-media-grid">
+                @for (entry of item.media; track entry.alt + entry.src + $index) {
+                  <div class="history-media overflow-hidden rounded-xl bg-slate-100 ring-1 ring-green-200">
+                    @if (entry.kind === 'youtube' && entry.src) {
+                      <div class="bg-slate-900">
+                        <iframe
+                          class="history-youtube-frame aspect-video w-full"
+                          [src]="getTrustedMediaUrl(entry.src)"
+                          [title]="entry.alt"
+                          loading="lazy"
+                          referrerpolicy="strict-origin-when-cross-origin"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowfullscreen>
+                        </iframe>
+                      </div>
+                    } @else if (entry.kind === 'image' && entry.src) {
+                      <img appSkeletonImg [src]="entry.src" [alt]="entry.alt" class="history-image-frame aspect-[4/3] w-full object-cover" />
+                    } @else {
+                      <div class="history-image-placeholder flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-green-100 to-lime-50 text-center">
+                        <div class="px-4">
+                          <p class="text-xs font-semibold uppercase tracking-wide text-green-800">Image Placeholder</p>
+                          <p class="mt-1 text-[11px] text-slate-500">{{ entry.alt }}</p>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">People and structure</p>
+      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Organizational Chart</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+        Our teams work closely across production, quality, and customer service to deliver products that meet our standards.
+      </p>
+    </div>
+
+    <div class="org-chart rounded-2xl bg-gradient-to-b from-green-50 to-white p-4 ring-1 ring-green-100 sm:p-6">
+      <div class="org-level grid gap-4 md:grid-cols-2 md:justify-center">
+        @for (member of executiveTeam; track member.name) {
+          <article class="org-card rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-green-100 sm:p-5">
+            <div class="mx-auto h-20 w-20 overflow-hidden rounded-full bg-gradient-to-br from-green-200 to-lime-100 p-1 ring-2 ring-green-100">
+              <div class="org-avatar-placeholder flex h-full w-full items-center justify-center rounded-full bg-green-800 text-base font-bold text-white">
+                {{ member.initials }}
+              </div>
+            </div>
+            <h3 class="mt-3 text-base font-bold text-green-900 sm:text-lg">{{ member.name }}</h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-green-700">{{ member.role }}</p>
+            <p class="mt-2 text-[11px] font-medium uppercase tracking-wide text-slate-400">Photo Placeholder</p>
+          </article>
+        }
+      </div>
+
+      <div class="org-connector my-5"></div>
+
+      <div class="org-level grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        @for (member of departmentHeads; track member.name) {
+          <article class="org-card rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-green-100 sm:p-5">
+            <div class="mx-auto h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-green-200 to-lime-100 p-1 ring-2 ring-green-100">
+              <div class="org-avatar-placeholder flex h-full w-full items-center justify-center rounded-full bg-green-800 text-sm font-bold text-white">
+                {{ member.initials }}
+              </div>
+            </div>
+            <h3 class="mt-3 text-base font-bold text-green-900 sm:text-lg">{{ member.name }}</h3>
+            <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-green-700">{{ member.role }}</p>
+            <p class="mt-2 text-[11px] font-medium uppercase tracking-wide text-slate-400">Photo Placeholder</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+</div>
