@@ -31,6 +31,12 @@ type OrgMember = {
 export class AboutComponent {
   constructor(private readonly sanitizer: DomSanitizer) {}
 
+  readonly mission =
+    'To craft high-quality Filipino food products using natural ingredients and trusted processes, bringing bold local flavors from our community to every Filipino table.';
+
+  readonly vision =
+    'To be a leading homegrown food brand in the Philippines — known for authentic taste, consistent quality, and products families can enjoy all year round.';
+
   readonly historyTimeline: TimelineItem[] = [
     {
       year: '1998',
