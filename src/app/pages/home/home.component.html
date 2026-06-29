@@ -36,7 +36,7 @@
       <p class="mt-2 text-base text-slate-600 sm:text-lg">The perfect partner for every dish.</p>
       <a routerLink="/products" fragment="sinantulan" class="mt-4 text-sm font-semibold text-green-700 hover:underline">View all →</a>
     </div>
-    <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-4 lg:grid-cols-4">
+    <div class="grid grid-cols-2 gap-3 sm:gap-4 lg:col-span-4 lg:grid-cols-3">
       @for (item of sinantulanProducts; track item.id; let i = $index) {
         <article class="product-card animate-on-enter group overflow-hidden rounded-2xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-lg {{ enterDelayClass(i, 5) }}">
           <img appSkeletonImg [src]="item.src" [alt]="item.label" class="h-36 w-full object-cover sm:h-40 lg:h-44" />
@@ -61,7 +61,7 @@
       <p class="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base lg:text-lg">Naturally delicious. Made for everyone.</p>
      
     </div>
-    <div class="grid flex-1 grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+    <div class="grid flex-1 grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-2">
       @for (item of dessertProducts; track item.id; let i = $index) {
         <div class="product-card animate-on-enter text-center {{ enterDelayClass(i, 6) }}">
           <div class="overflow-hidden rounded-t-2xl sm:rounded-t-3xl">

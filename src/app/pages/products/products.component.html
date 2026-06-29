@@ -19,8 +19,24 @@
       <button type="button" [class]="filterButtonClass('dessert')" (click)="setFilter('dessert')">
         Desserts
       </button>
+      <button type="button" [class]="filterButtonClass('laing')" (click)="setFilter('laing')">
+        Laing
+      </button>
+      <button type="button" [class]="filterButtonClass('puso-ng-saging')" (click)="setFilter('puso-ng-saging')">
+        Puso ng Saging
+      </button>
     </div>
   </section>
+
+
+
+
+
+
+
+
+
+
 
   <!-- Sinantulan -->
   @if (activeFilter === 'all' || activeFilter === 'sinantulan') {
@@ -28,10 +44,9 @@
     <div class="mb-8 max-w-3xl">
       <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Appetizers</p>
       <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Sinantulan</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-        A beloved Filipino condiment made from santol — tangy, savory, and made to elevate rice, grilled dishes, and
-        everyday ulam. Choose your heat level and find your household favorite.
-      </p>
+     <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+  Crafted from ripe santol using our signature family recipe, our Sinantulan delivers the perfect balance of tangy, savory, and spicy flavors. A versatile Filipino condiment that complements grilled dishes, fried favorites, and every bowl of warm rice.
+</p>
     </div>
 
     <div class="grid gap-6 lg:grid-cols-2">
@@ -68,6 +83,101 @@
   </section>
   }
 
+
+  <!-- Puso ng Saging  -->
+  @if (activeFilter === 'all' || activeFilter === 'puso-ng-saging') {
+  <section id="puso-ng-saging" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Appetizers</p>
+      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Puso ng Saging</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+  A timeless Filipino delicacy made from tender banana blossoms simmered in rich coconut milk and carefully selected spices. Enjoy a creamy, comforting dish that's ready to serve and perfect for everyday family meals.
+</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      @for (product of pusoNgSagingProducts; track product.id) {
+        <article class="product-showcase-card overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-green-100/80">
+          <div class="grid sm:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr]">
+            <div class="overflow-hidden bg-gradient-to-br from-green-50 to-lime-100 sm:min-h-full">
+              <img appSkeletonImg [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover sm:h-full sm:min-h-[13rem]" />
+            </div>
+            <div class="flex flex-col p-5 sm:p-6">
+              <h3 class="text-2xl font-black text-green-900">{{ product.label }}</h3>
+              @if (product.size) {
+                <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">{{ product.size }}</p>
+              }
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">{{ product.description }}</p>
+              <ul class="mt-4 space-y-1.5">
+                @for (point of product.highlights; track point) {
+                  <li class="flex items-start gap-2 text-sm text-slate-700">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-500"></span>
+                    {{ point }}
+                  </li>
+                }
+              </ul>
+              <button
+                type="button"
+                class="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-green-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800">
+                Inquire Now!
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+  }
+
+
+    <!-- Laing  -->
+  @if (activeFilter === 'all' || activeFilter === 'laing') {
+  <section id="laing" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Appetizers</p>
+      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Laing</h2>
+     <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+  Experience the authentic taste of Bicol with our rich and creamy Laing, made from premium dried taro leaves slow-cooked in coconut milk and flavorful spices. Available in Original and Spicy varieties to suit every palate.
+</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      @for (product of laingProducts; track product.id) {
+        <article class="product-showcase-card overflow-hidden rounded-3xl bg-white shadow-md ring-1 ring-green-100/80">
+          <div class="grid sm:grid-cols-[11rem_1fr] lg:grid-cols-[13rem_1fr]">
+            <div class="overflow-hidden bg-gradient-to-br from-green-50 to-lime-100 sm:min-h-full">
+              <img appSkeletonImg [src]="product.src" [alt]="product.label" class="h-52 w-full object-cover sm:h-full sm:min-h-[13rem]" />
+            </div>
+            <div class="flex flex-col p-5 sm:p-6">
+              <h3 class="text-2xl font-black text-green-900">{{ product.label }}</h3>
+              @if (product.size) {
+                <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">{{ product.size }}</p>
+              }
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">{{ product.description }}</p>
+              <ul class="mt-4 space-y-1.5">
+                @for (point of product.highlights; track point) {
+                  <li class="flex items-start gap-2 text-sm text-slate-700">
+                    <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-500"></span>
+                    {{ point }}
+                  </li>
+                }
+              </ul>
+              <button
+                type="button"
+                class="mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-green-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-800">
+                Inquire Now!
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+  }
+
+
+
+
   <!-- Dessert -->
   @if (activeFilter === 'all' || activeFilter === 'dessert') {
   <section id="dessert" class="scroll-mt-28 rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
@@ -75,9 +185,8 @@
       <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Preserves</p>
       <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Dessert</h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-        Naturally delicious fruit and coconut preserves for snacking, halo-halo, pastries, and gifting — made for
-        everyone and perfect all season.
-      </p>
+  Indulge in our collection of premium fruit preserves and sweet treats, made from carefully selected ingredients to deliver fresh, natural flavors. Perfect for desserts, snacks, celebrations, or simply enjoying straight from the jar.
+</p>
     </div>
 
     <div class="grid gap-6 lg:grid-cols-2">

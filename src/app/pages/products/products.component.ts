@@ -1,9 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { DESSERT_PRODUCTS, SINANTULAN_PRODUCTS } from '../../data/products.data';
+import { DESSERT_PRODUCTS, LAING_PRODUCTS, PUSO_NG_SAGING_PRODUCTS, SINANTULAN_PRODUCTS } from '../../data/products.data';
 import { SkeletonImageDirective } from '../../shared/skeleton-image.directive';
 
-export type ProductFilter = 'all' | 'sinantulan' | 'dessert';
+export type ProductFilter = 'all' | 'sinantulan' | 'dessert' | 'laing' | 'puso-ng-saging';
 
 @Component({
   selector: 'app-products',
@@ -15,6 +15,10 @@ export type ProductFilter = 'all' | 'sinantulan' | 'dessert';
 export class ProductsComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
 
+
+
+  readonly laingProducts = LAING_PRODUCTS;
+  readonly pusoNgSagingProducts = PUSO_NG_SAGING_PRODUCTS;
   readonly sinantulanProducts = SINANTULAN_PRODUCTS;
   readonly dessertProducts = DESSERT_PRODUCTS;
 
@@ -22,7 +26,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.fragment.subscribe((fragment) => {
-      if (fragment === 'sinantulan' || fragment === 'dessert') {
+      if (fragment === 'sinantulan' || fragment === 'dessert' || fragment === 'laing' || fragment === 'puso-ng-saging') {
         this.activeFilter = fragment;
       }
     });

@@ -32,61 +32,90 @@ export class AboutComponent {
   constructor(private readonly sanitizer: DomSanitizer) {}
 
   readonly mission =
-    'To craft high-quality Filipino food products using natural ingredients and trusted processes, bringing bold local flavors from our community to every Filipino table.';
-
+    'We are dedicated to our promise of producing best quality products to consumers who have relied on us since 2000. We are committed in creating clean and delicious bottled food products to suits local tastes as well as international standards';
   readonly vision =
-    'To be a leading homegrown food brand in the Philippines — known for authentic taste, consistent quality, and products families can enjoy all year round.';
-
+    'To build on our success and high standards in the food industry. We plan to extend our operations and thereby generating more jobs to help more locality. We also have plan to generate a strong and long-term sustainable competitive advantage thus providing superior returns for our business partners.';
   readonly historyTimeline: TimelineItem[] = [
-    {
-      year: '1998',
-      title: 'Family kitchen beginnings',
-      description: 'Mondragon Food Products started as a small home-based operation focused on traditional Filipino flavors.',
-      media: [
-        { kind: 'image', src: '', alt: 'Family kitchen beginnings photo 1' },
-        { kind: 'image', src: '', alt: 'Family kitchen beginnings photo 2' },
-      ],
-    },
-    {
-      year: '2008',
-      title: 'Local market expansion',
-      description: 'We expanded distribution across nearby towns and strengthened partnerships with local growers and suppliers.',
-      media: [
-        { kind: 'image', src: '', alt: 'Local market expansion photo 1' },
-      ],
-    },
-    {
-      year: '2018',
-      title: 'Product line growth',
-      description: 'Our sinantulan and dessert lines grew into a broader collection made for households, resellers, and events.',
-      media: [
-        { kind: 'youtube', src: 'https://www.youtube.com/embed/6vg1Q32YkAc', alt: 'Mondragon 2018 milestone video' },
-        { kind: 'image', src: '', alt: '2018 product line growth photo' },
-      ],
-    },
-    {
-      year: 'Today',
-      title: 'Modernizing with purpose',
-      description: 'We continue to blend heritage recipes with modern production practices while keeping quality and community first.',
-      media: [
-        { kind: 'image', src: '', alt: 'Current operations photo 1' },
-        { kind: 'image', src: '', alt: 'Current operations photo 2' },
-        { kind: 'image', src: '', alt: 'Current operations photo 3' },
-      ],
-    },
-  ];
+  {
+    year: '1980s',
+    title: 'The Humble Beginning',
+    description:
+      'The Mondragon family started by buying and selling agricultural raw materials such as coconuts and young coconut meat (buko). With limited capital, they supplied factories across CALABARZON using their first delivery jeepney.',
+    media: [
+      { kind: 'image', src: '', alt: 'The Humble Beginning photo 1' },
+      { kind: 'image', src: '', alt: 'The Humble Beginning photo 2' },
+    ],
+  },
+  {
+    year: '2000',
+    title: 'Mondragon Food Products Established',
+    description:
+      'The company officially transitioned from supplying raw materials to producing bottled food products. This marked the birth of Mondragon Food Products and the start of its food processing journey.',
+    media: [
+      { kind: 'image', src: '', alt: 'Mondragon Food Products establishment photo' },
+    ],
+  },
+  {
+    year: '2017',
+    title: 'The Birth of Original Sinantulan',
+    description:
+      'What began as a homemade gift for a family member abroad became a breakthrough product. After positive feedback and growing interest on social media, Mondragon’s Original Sinantulan quickly gained popularity.',
+    media: [
+      {
+        kind: 'youtube',
+        src: 'https://www.youtube.com/embed/6vg1Q32YkAc',
+        alt: 'Original Sinantulan milestone video',
+      },
+      {
+        kind: 'image',
+        src: '',
+        alt: 'Original Sinantulan launch photo',
+      },
+    ],
+  },
+  {
+    year: 'Today',
+    title: 'Growing the Legacy',
+    description:
+      'Mondragon Food Products continues to produce high-quality Filipino bottled delicacies, including its renowned Sinantulan and Special Laing. The company remains committed to supporting local communities while expanding its reach and product offerings.',
+    media: [
+      { kind: 'image', src: '', alt: 'Current operations photo 1' },
+      { kind: 'image', src: '', alt: 'Current operations photo 2' },
+      { kind: 'image', src: '', alt: 'Current operations photo 3' },
+    ],
+  },
+];
 
-  readonly executiveTeam: OrgMember[] = [
-    { name: 'Maria Mondragon', role: 'Founder & Chairperson', initials: 'MM' },
-    { name: 'Antonio Reyes', role: 'General Manager', initials: 'AR' },
-  ];
+ readonly executiveTeam: OrgMember[] = [
+  {
+    name: 'Hernando Mondragon',
+    role: 'Owner & Founder',
+    initials: 'HM',
+  },
+  {
+    name: 'Tess Mondragon',
+    role: 'Co-Founder',
+    initials: 'TM',
+  },
+];
 
-  readonly departmentHeads: OrgMember[] = [
-    { name: 'Lea Santos', role: 'Production Lead', initials: 'LS' },
-    { name: 'Jessa Cruz', role: 'Quality Assurance', initials: 'JC' },
-    { name: 'Paolo Dela Rosa', role: 'Sales & Marketing', initials: 'PD' },
-    { name: 'Nina Flores', role: 'Finance & Admin', initials: 'NF' },
-  ];
+readonly departmentHeads: OrgMember[] = [
+  {
+    name: 'Myla Mondragon',
+    role: 'Business Operations',
+    initials: 'MM',
+  },
+  {
+    name: 'Mark Mondragon',
+    role: 'Production Operations',
+    initials: 'MK',
+  },
+  {
+    name: 'Micah Mondragon',
+    role: 'Brand Ambassador',
+    initials: 'MC',
+  },
+];
 
   getTrustedMediaUrl(url: string): SafeResourceUrl {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);

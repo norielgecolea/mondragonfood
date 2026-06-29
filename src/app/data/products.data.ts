@@ -8,84 +8,138 @@ export interface Product {
   size?: string;
 }
 
-export const SINANTULAN_PRODUCTS: Product[] = [
+export const LAING_PRODUCTS: Product[] = [
   {
     id: 'spicy',
     label: 'Spicy',
-    src: 'assets/originalspicy.png',
+    src: 'assets/laing/laing-spicy.jpg',
     badgeClass: 'bg-red-600',
     size: '330g jar',
     description:
-      'Our boldest sinantulan blend, made with ripe santol, native chilies, and a savory spice mix that wakes up every bite.',
-    highlights: ['Medium-hot kick', 'Great with grilled meats', 'No artificial preservatives'],
+      'Traditional Bicolano laing made from dried taro leaves, coconut milk, and chili peppers for a rich, creamy, and spicy flavor.',
+    highlights: [
+      'Authentic Bicol recipe',
+      'Rich coconut flavor',
+      'Perfect with steamed rice'
+    ],
   },
   {
     id: 'original',
     label: 'Original',
-    src: 'assets/original.jpg',
+    src: 'assets/laing/laing-original.jpg',
     badgeClass: 'bg-green-700',
     size: '330g jar',
     description:
-      'The classic Mondragon recipe — balanced tangy-sweet santol flavor that pairs with almost any Filipino ulam.',
-    highlights: ['All-around table staple', 'Tangy & savory profile', 'Family-size friendly'],
+      'A classic homemade laing with creamy coconut milk and aromatic spices, offering a well-balanced savory taste without the extra heat.',
+    highlights: [
+      'Creamy & savory',
+      'Ready to serve',
+      'No artificial preservatives'
+    ],
+  },
+];
+
+export const PUSO_NG_SAGING_PRODUCTS: Product[] = [
+  {
+    id: 'spicy',
+    label: 'Spicy',
+    src: 'assets/puso-ng-saging/puso-ng-saging-spicy.jpg',
+    badgeClass: 'bg-red-600',
+    size: '330g jar',
+    description:
+      'Tender banana blossom cooked in rich coconut milk and spicy chilies for a deliciously creamy Filipino favorite.',
+    highlights: [
+      'Made with banana blossom',
+      'Spicy coconut sauce',
+      'Best served hot'
+    ],
+  },
+  {
+    id: 'original',
+    label: 'Original',
+    src: 'assets/puso-ng-saging/puso-ng-saging-original.jpg',
+    badgeClass: 'bg-green-700',
+    size: '330g jar',
+    description:
+      'A comforting blend of banana blossom simmered in creamy coconut milk with traditional seasonings for a mild and satisfying meal.',
+    highlights: [
+      'Creamy & flavorful',
+      'Traditional Filipino recipe',
+      'Ready-to-eat'
+    ],
+  },
+];
+
+export const SINANTULAN_PRODUCTS: Product[] = [
+  {
+    id: 'spicy',
+    label: 'Spicy',
+    src: 'assets/sinantulan/sinantulan-spicy.jpg',
+    badgeClass: 'bg-red-600',
+    size: '330g jar',
+    description:
+      'A spicy version of the beloved sinantulan made from ripe santol, chili peppers, and savory seasonings that add a bold kick to every meal.',
+    highlights: [
+      'Spicy & tangy',
+      'Great with grilled dishes',
+      'No artificial preservatives'
+    ],
+  },
+  {
+    id: 'original',
+    label: 'Original',
+    src: 'assets/sinantulan/sinantulan-original.jpg',
+    badgeClass: 'bg-green-700',
+    size: '330g jar',
+    description:
+      'The signature Mondragon sinantulan featuring the perfect balance of sweet, tangy, and savory santol flavors.',
+    highlights: [
+      'Classic family recipe',
+      'Balanced flavor',
+      'Pairs with any Filipino meal'
+    ],
   },
   {
     id: 'pure',
     label: 'Pure',
-    src: 'assets/originalmilk.jpg',
+    src: 'assets/sinantulan/sinantulan-pure.jpg',
     badgeClass: 'bg-amber-500',
     size: '330g jar',
     description:
-      'A smoother, milder take on sinantulan with a creamy finish — perfect for kids and anyone who prefers gentle heat.',
-    highlights: ['Mild & creamy', 'Kid-friendly', 'Soft santol notes'],
-  },
-  {
-    id: 'variants',
-    label: 'Other Variants',
-    src: 'assets/speciallaing.jpg',
-    badgeClass: 'bg-emerald-700',
-    size: 'Assorted',
-    description:
-      'Seasonal and regional specials — limited batches crafted with local ingredients and heirloom family techniques.',
-    highlights: ['Limited releases', 'Regional flavors', 'Gift-ready sets'],
-  },
+      'Pure santol goodness with a naturally tangy taste, crafted for those who enjoy the authentic flavor of fresh santol.',
+    highlights: [
+      '100% santol flavor',
+      'Naturally tangy',
+      'Versatile condiment'
+    ],
+  }
 ];
 
 export const DESSERT_PRODUCTS: Product[] = [
   {
     id: 'jackfruit',
     label: 'Jackfruit',
-    src: 'assets/jackfruit.png',
+    src: 'assets/dessert/jack-fruit.jpg',
     size: '320g jar',
     description:
-      'Golden langka strips preserved in light syrup — naturally sweet, fragrant, and ready to enjoy straight from the jar.',
-    highlights: ['Ripe jackfruit', 'Dessert or topping', 'Naturally sweet'],
+      'Premium ripe jackfruit preserved in light syrup, delivering a naturally sweet and tropical treat for any occasion.',
+    highlights: [
+      'Made from ripe jackfruit',
+      'Perfect dessert topping',
+      'Ready to enjoy'
+    ],
   },
   {
     id: 'macapuno',
-    label: 'Pure Macapuno',
-    src: 'assets/macapuno.png',
+    label: 'Macapuno',
+    src: 'assets/dessert/macapuno.jpg',
     size: '320g jar',
     description:
-      'Soft macapuno strings in delicate syrup — a premium coconut treat with a luxurious, chewy texture.',
-    highlights: ['Premium coconut', 'Halo-halo essential', 'Smooth sweetness'],
-  },
-  {
-    id: 'ube',
-    label: 'Ube Jam',
-    src: 'assets/ube-jam.png',
-    size: '320g jar',
-    description:
-      'Rich purple yam halaya slow-cooked to a velvety spread — deep ube flavor with the perfect thickness for bread or pastries.',
-    highlights: ['Real ube', 'Spreadable texture', 'Filipino favorite'],
-  },
-  {
-    id: 'nata',
-    label: 'Nata de Coco',
-    src: 'assets/nata-de-coco.png',
-    size: '3-pack',
-    description:
-      'Chewy nata de coco cubes in refreshing syrup — available in classic flavors, ideal for coolers, desserts, and snacks.',
-    highlights: ['Refreshing cubes', 'Multiple flavors', 'Party-ready'],
+      'Refreshing nata de coco cubes in sweet syrup with a delightfully chewy texture, perfect for desserts and chilled beverages.',
+    highlights: [
+      'Chewy coconut cubes',
+      'Refreshing & sweet',
+      'Great for desserts and drinks'
+    ],
   },
 ];
