@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 import { SkeletonImageDirective } from '../../shared/skeleton-image.directive';
 
 type TimelineMedia = {
@@ -21,10 +22,26 @@ type OrgMember = {
   initials: string;
 };
 
+type ValueCard = {
+  title: string;
+  description: string;
+};
+
+type ProcessStep = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+type StatCard = {
+  value: string;
+  label: string;
+};
+
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [SkeletonImageDirective],
+  imports: [RouterLink, SkeletonImageDirective],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
@@ -32,9 +49,62 @@ export class AboutComponent {
   constructor(private readonly sanitizer: DomSanitizer) {}
 
   readonly mission =
-    'We are dedicated to our promise of producing best quality products to consumers who have relied on us since 2000. We are committed in creating clean and delicious bottled food products to suits local tastes as well as international standards';
+    'To produce clean, flavorful bottled Filipino food products that customers can trust for everyday meals, family gatherings, and pasalubong moments.';
   readonly vision =
-    'To build on our success and high standards in the food industry. We plan to extend our operations and thereby generating more jobs to help more locality. We also have plan to generate a strong and long-term sustainable competitive advantage thus providing superior returns for our business partners.';
+    'To grow Mondragon Food Products into a lasting Filipino food brand that creates local jobs, supports community livelihood, and brings Northern Samar flavors to more homes.';
+
+  readonly stats: StatCard[] = [
+    { value: '2000', label: 'food brand established' },
+    { value: '4', label: 'product families' },
+    { value: 'Local', label: 'Northern Samar roots' },
+  ];
+
+  readonly values: ValueCard[] = [
+    {
+      title: 'Quality in every batch',
+      description:
+        'We focus on consistent taste, clean preparation, and dependable bottled products that customers can confidently serve.',
+    },
+    {
+      title: 'Filipino flavor first',
+      description:
+        'Our recipes are built around familiar Filipino ingredients, comforting coconut-based dishes, and bright local fruit flavors.',
+    },
+    {
+      title: 'Community livelihood',
+      description:
+        'Growth matters most when it also creates work, supports local supply, and keeps opportunity close to home.',
+    },
+    {
+      title: 'Ready for modern tables',
+      description:
+        'Every jar is made for convenience without losing the home-cooked character people expect from Filipino food.',
+    },
+  ];
+
+  readonly processSteps: ProcessStep[] = [
+    {
+      step: '01',
+      title: 'Source',
+      description: 'We begin with familiar local produce and ingredients suited to Filipino bottled delicacies.',
+    },
+    {
+      step: '02',
+      title: 'Prepare',
+      description: 'Recipes are cooked and seasoned for balanced flavor, whether savory, spicy, creamy, or sweet.',
+    },
+    {
+      step: '03',
+      title: 'Bottle',
+      description: 'Products are packed for shelf-ready convenience while keeping the flavor customers recognize.',
+    },
+    {
+      step: '04',
+      title: 'Check',
+      description: 'Each batch is handled with attention to cleanliness, consistency, and customer satisfaction.',
+    },
+  ];
+
   readonly historyTimeline: TimelineItem[] = [
   {
     year: '1980s',
@@ -42,8 +112,8 @@ export class AboutComponent {
     description:
       'The Mondragon family started by buying and selling agricultural raw materials such as coconuts and young coconut meat (buko). With limited capital, they supplied factories across CALABARZON using their first delivery jeepney.',
     media: [
-      { kind: 'image', src: '', alt: 'The Humble Beginning photo 1' },
-      { kind: 'image', src: '', alt: 'The Humble Beginning photo 2' },
+      { kind: 'image', src: 'assets/FOR HERO.jpg', alt: 'Mondragon ingredients and product roots' },
+      { kind: 'image', src: 'assets/hero.png', alt: 'Mondragon product preparation' },
     ],
   },
   {
@@ -52,7 +122,7 @@ export class AboutComponent {
     description:
       'The company officially transitioned from supplying raw materials to producing bottled food products. This marked the birth of Mondragon Food Products and the start of its food processing journey.',
     media: [
-      { kind: 'image', src: '', alt: 'Mondragon Food Products establishment photo' },
+      { kind: 'image', src: 'assets/main-products-table.png', alt: 'Mondragon bottled food product lineup' },
     ],
   },
   {
@@ -68,7 +138,7 @@ export class AboutComponent {
       },
       {
         kind: 'image',
-        src: '',
+        src: 'assets/sinantulan/sinantulan-original.jpg',
         alt: 'Original Sinantulan launch photo',
       },
     ],
@@ -79,9 +149,9 @@ export class AboutComponent {
     description:
       'Mondragon Food Products continues to produce high-quality Filipino bottled delicacies, including its renowned Sinantulan and Special Laing. The company remains committed to supporting local communities while expanding its reach and product offerings.',
     media: [
-      { kind: 'image', src: '', alt: 'Current operations photo 1' },
-      { kind: 'image', src: '', alt: 'Current operations photo 2' },
-      { kind: 'image', src: '', alt: 'Current operations photo 3' },
+      { kind: 'image', src: 'assets/laing/laing-original.jpg', alt: 'Special Laing product' },
+      { kind: 'image', src: 'assets/puso-ng-saging/puso-ng-saging-original.jpg', alt: 'Puso ng Saging product' },
+      { kind: 'image', src: 'assets/dessert/jack-fruit.jpg', alt: 'Dessert preserve product' },
     ],
   },
 ];

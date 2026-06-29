@@ -1,100 +1,108 @@
-<div class="mt-5 space-y-10 pb-4">
-  <section class="overflow-hidden rounded-3xl bg-gradient-to-br from-green-900 via-green-800 to-emerald-900 px-6 py-12 text-white sm:px-10 sm:py-14">
-    <p class="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-lime-200">
-      About us
-    </p>
-    <h1 class="mt-4 max-w-3xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">Rooted in tradition, built for today.</h1>
-    <p class="mt-4 max-w-3xl text-sm leading-relaxed text-green-100/90 sm:text-base lg:text-lg">
-      Mondragon Food Products brings authentic Filipino flavor to modern tables. We work with local ingredients, trusted
-      processes, and a team committed to consistency in every batch.
-    </p>
-  </section>
+<div class="about-page mt-5 space-y-8 pb-4">
 
-  <section class="rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
-    <div class="mb-8 max-w-3xl">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Who we are</p>
-      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Mission &amp; Vision</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-        Our purpose and direction guide how we produce, serve, and grow as a Filipino food brand.
-      </p>
-    </div>
 
-    <div class="grid gap-5 md:grid-cols-2">
-      <article class="mv-card rounded-2xl bg-gradient-to-br from-green-50 to-lime-50/80 p-5 ring-1 ring-green-100 sm:p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-green-700 text-white">
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-black text-green-900 sm:text-2xl">Mission</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{{ mission }}</p>
+  <!-- MISSION / VISION -->
+  <section class="about-section rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="grid gap-4 lg:grid-cols-2">
+      <article class="mv-card rounded-2xl bg-gradient-to-br from-green-50 to-lime-100 p-6 ring-1 ring-green-100">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-green-700">Mission</p>
+        <h2 class="mt-3 text-2xl font-black text-green-950 sm:text-3xl">Clean, flavorful food people can trust.</h2>
+        <p class="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">{{ mission }}</p>
       </article>
-
-      <article class="mv-card rounded-2xl bg-gradient-to-br from-lime-50 to-green-50/80 p-5 ring-1 ring-green-100 sm:p-6">
-        <div class="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-lime-500 text-green-950">
-          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-        </div>
-        <h3 class="text-xl font-black text-green-900 sm:text-2xl">Vision</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{{ vision }}</p>
+      <article class="mv-card rounded-2xl bg-gradient-to-br from-lime-50 to-emerald-100 p-6 ring-1 ring-green-100">
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-green-700">Vision</p>
+        <h2 class="mt-3 text-2xl font-black text-green-950 sm:text-3xl">A local brand with lasting livelihood.</h2>
+        <p class="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">{{ vision }}</p>
       </article>
     </div>
   </section>
 
-  <section class="rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
-    <div class="mb-8 max-w-3xl">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">Our journey</p>
-      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">History</h2>
+  <!-- VALUES -->
+  <section class="about-section rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-6 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-lime-700">What we stand for</p>
+      <h2 class="mt-2 text-3xl font-black text-green-950 sm:text-4xl">The standards behind every jar</h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-        From a family kitchen to a growing food brand in Mondragon, our story is guided by quality, service, and Filipino
-        heritage.
+        The brand is built around taste, consistency, community, and the simple promise that bottled food should still feel familiar.
       </p>
     </div>
-
-    <div class="history-timeline space-y-6">
-      @for (item of historyTimeline; track item.year) {
-        <article class="history-item history-item-grid rounded-2xl bg-gradient-to-br from-white via-lime-50/30 to-green-50/50 p-4 ring-1 ring-green-100 sm:p-5">
-          <div class="history-left">
-            <div class="history-dot"></div>
-            <div class="history-year inline-flex w-fit rounded-full bg-green-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-green-800">
-              {{ item.year }}
-            </div>
+    <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      @for (value of values; track value.title) {
+        <article class="value-card rounded-2xl bg-gradient-to-br from-white to-green-50 p-5 shadow-sm ring-1 ring-green-100/80">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-green-800 text-sm font-black text-white">
+            {{ $index + 1 }}
           </div>
-          <div class="history-main">
-            <div>
-              <h3 class="text-lg font-bold text-green-900 sm:text-xl">{{ item.title }}</h3>
-              <p class="mt-1 text-sm leading-relaxed text-slate-600 sm:text-base">{{ item.description }}</p>
+          <h3 class="text-lg font-black text-green-950">{{ value.title }}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ value.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="about-section overflow-hidden rounded-3xl bg-green-950 p-5 text-white shadow-md sm:p-8">
+    <div class="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.22em] text-lime-300">How we make it</p>
+        <h2 class="mt-2 text-3xl font-black leading-tight sm:text-4xl">From local ingredients to shelf-ready flavor.</h2>
+        <p class="mt-4 max-w-md text-sm leading-relaxed text-green-100/85 sm:text-base">
+          The process keeps the focus on practical food quality: good ingredients, balanced cooking, clean bottling, and careful checks.
+        </p>
+      </div>
+      <div class="grid gap-3 sm:grid-cols-2">
+        @for (step of processSteps; track step.step) {
+          <article class="process-card rounded-2xl bg-white/10 p-5 ring-1 ring-white/10 backdrop-blur-sm">
+            <p class="text-xs font-black uppercase tracking-[0.22em] text-lime-300">{{ step.step }}</p>
+            <h3 class="mt-3 text-xl font-black">{{ step.title }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-green-100/85">{{ step.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="about-section rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+    <div class="mb-8 max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-lime-700">Our story</p>
+      <h2 class="mt-2 text-3xl font-black text-green-950 sm:text-4xl">A history of local work and growing flavor</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+        Mondragon’s path started with agricultural raw materials and grew into a bottled food brand shaped by family, customer feedback, and community.
+      </p>
+    </div>
+
+    <div class="space-y-5">
+      @for (item of historyTimeline; track item.year) {
+        <article class="history-item rounded-3xl bg-white p-4 shadow-sm ring-1 ring-green-100/80 sm:p-5">
+          <div class="history-item-grid">
+            <div class="history-left">
+              <span class="history-dot"></span>
+              <span class="history-year inline-flex rounded-full bg-green-100 px-4 py-2 text-sm font-black text-green-900">{{ item.year }}</span>
             </div>
-            <div class="history-media-wrap mt-4">
-              <div class="history-media-grid">
-                @for (entry of item.media; track entry.alt + entry.src + $index) {
-                  <div class="history-media overflow-hidden rounded-xl bg-slate-100 ring-1 ring-green-200">
-                    @if (entry.kind === 'youtube' && entry.src) {
-                      <div class="bg-slate-900">
+            <div class="history-main">
+              <h3 class="text-2xl font-black text-green-950">{{ item.title }}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">{{ item.description }}</p>
+
+              <div class="history-media-wrap mt-5">
+                <div class="history-media-grid">
+                  @for (media of item.media; track media.src) {
+                    @if (media.kind === 'youtube') {
+                      <div class="history-youtube-frame overflow-hidden rounded-2xl bg-slate-900 shadow-sm">
                         <iframe
-                          class="history-youtube-frame aspect-video w-full"
-                          [src]="getTrustedMediaUrl(entry.src)"
-                          [title]="entry.alt"
-                          loading="lazy"
-                          referrerpolicy="strict-origin-when-cross-origin"
+                          class="h-full min-h-52 w-full"
+                          [src]="getTrustedMediaUrl(media.src)"
+                          [title]="media.alt"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowfullscreen>
                         </iframe>
                       </div>
-                    } @else if (entry.kind === 'image' && entry.src) {
-                      <img appSkeletonImg [src]="entry.src" [alt]="entry.alt" class="history-image-frame aspect-[4/3] w-full object-cover" />
                     } @else {
-                      <div class="history-image-placeholder flex aspect-[4/3] w-full items-center justify-center bg-gradient-to-br from-green-100 to-lime-50 text-center">
-                        <div class="px-4">
-                          <p class="text-xs font-semibold uppercase tracking-wide text-green-800">Image Placeholder</p>
-                          <p class="mt-1 text-[11px] text-slate-500">{{ entry.alt }}</p>
-                        </div>
+                      <div class="history-image-frame overflow-hidden rounded-2xl bg-green-50 shadow-sm">
+                        <img appSkeletonImg [src]="media.src" [alt]="media.alt" class="h-full min-h-52 w-full object-cover" />
                       </div>
                     }
-                  </div>
-                }
+                  }
+                </div>
               </div>
             </div>
           </div>
@@ -103,47 +111,59 @@
     </div>
   </section>
 
-  <section class="rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
+  <!-- TEAM -->
+  <section class="about-section rounded-3xl bg-white/90 p-5 shadow-md ring-1 ring-white/80 sm:p-8">
     <div class="mb-8 max-w-3xl">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-green-700">People and structure</p>
-      <h2 class="mt-2 text-3xl font-black text-green-900 sm:text-4xl">Organizational Chart</h2>
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-lime-700">People behind the brand</p>
+      <h2 class="mt-2 text-3xl font-black text-green-950 sm:text-4xl">Family leadership, focused operations</h2>
       <p class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-        Our teams work closely across production, quality, and customer service to deliver products that meet our standards.
+        The company works across leadership, production, operations, and brand support to keep products consistent and customers served.
       </p>
     </div>
 
-    <div class="org-chart rounded-2xl bg-gradient-to-b from-green-50 to-white p-4 ring-1 ring-green-100 sm:p-6">
-      <div class="org-level grid gap-4 md:grid-cols-2 md:justify-center">
+    <div class="org-chart">
+      <div class="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
         @for (member of executiveTeam; track member.name) {
-          <article class="org-card rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-green-100 sm:p-5">
-            <div class="mx-auto h-20 w-20 overflow-hidden rounded-full bg-gradient-to-br from-green-200 to-lime-100 p-1 ring-2 ring-green-100">
-              <div class="org-avatar-placeholder flex h-full w-full items-center justify-center rounded-full bg-green-800 text-base font-bold text-white">
-                {{ member.initials }}
-              </div>
+          <article class="org-card rounded-2xl bg-gradient-to-br from-green-50 to-lime-100 p-5 text-center shadow-sm ring-1 ring-green-100">
+            <div class="org-avatar-placeholder mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-800 text-lg font-black text-white">
+              {{ member.initials }}
             </div>
-            <h3 class="mt-3 text-base font-bold text-green-900 sm:text-lg">{{ member.name }}</h3>
-            <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-green-700">{{ member.role }}</p>
-            <p class="mt-2 text-[11px] font-medium uppercase tracking-wide text-slate-400">Photo Placeholder</p>
+            <h3 class="mt-4 text-lg font-black text-green-950">{{ member.name }}</h3>
+            <p class="mt-1 text-sm font-semibold text-slate-600">{{ member.role }}</p>
           </article>
         }
       </div>
 
-      <div class="org-connector my-5"></div>
+      <div class="org-connector"></div>
 
-      <div class="org-level grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-4 sm:grid-cols-3">
         @for (member of departmentHeads; track member.name) {
-          <article class="org-card rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-green-100 sm:p-5">
-            <div class="mx-auto h-16 w-16 overflow-hidden rounded-full bg-gradient-to-br from-green-200 to-lime-100 p-1 ring-2 ring-green-100">
-              <div class="org-avatar-placeholder flex h-full w-full items-center justify-center rounded-full bg-green-800 text-sm font-bold text-white">
-                {{ member.initials }}
-              </div>
+          <article class="org-card rounded-2xl bg-white p-5 text-center shadow-sm ring-1 ring-green-100">
+            <div class="org-avatar-placeholder mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-lime-100 text-base font-black text-green-900">
+              {{ member.initials }}
             </div>
-            <h3 class="mt-3 text-base font-bold text-green-900 sm:text-lg">{{ member.name }}</h3>
-            <p class="mt-1 text-xs font-semibold uppercase tracking-wide text-green-700">{{ member.role }}</p>
-            <p class="mt-2 text-[11px] font-medium uppercase tracking-wide text-slate-400">Photo Placeholder</p>
+            <h3 class="mt-4 text-base font-black text-green-950">{{ member.name }}</h3>
+            <p class="mt-1 text-sm font-semibold text-slate-600">{{ member.role }}</p>
           </article>
         }
       </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta rounded-3xl bg-gradient-to-r from-lime-100 via-green-50 to-white px-6 py-10 text-center shadow-sm ring-1 ring-white/80 sm:px-10">
+    <p class="text-xs font-bold uppercase tracking-[0.22em] text-lime-700">Taste the story</p>
+    <h2 class="mx-auto mt-2 max-w-2xl text-3xl font-black text-green-950 sm:text-4xl">Explore the bottled favorites made in Mondragon.</h2>
+    <p class="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+      See the full catalog of Sinantulan, Special Laing, Puso ng Saging, and dessert preserves.
+    </p>
+    <div class="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
+      <a routerLink="/products" class="inline-flex items-center justify-center rounded-full bg-green-800 px-7 py-3 text-sm font-bold text-white shadow-lg shadow-green-900/20 transition hover:-translate-y-0.5 hover:bg-green-900">
+        View Products
+      </a>
+      <a routerLink="/" fragment="contact" class="inline-flex items-center justify-center rounded-full border border-green-200 bg-white px-7 py-3 text-sm font-bold text-green-900 transition hover:-translate-y-0.5 hover:bg-green-50">
+        Contact Us
+      </a>
     </div>
   </section>
 </div>
