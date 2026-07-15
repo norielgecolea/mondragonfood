@@ -49,14 +49,14 @@ export class AboutComponent {
   constructor(private readonly sanitizer: DomSanitizer) {}
 
   readonly mission =
-    'To produce clean, flavorful bottled Filipino food products that customers can trust for everyday meals, family gatherings, and pasalubong moments.';
+    'We are dedicated to our promise of producing best quality products to consumers who have relied on us since 2000. We are committed in creating clean and delicious bottled food products to suits local tastes as well as international standards.';
   readonly vision =
-    'To grow Mondragon Food Products into a lasting Filipino food brand that creates local jobs, supports community livelihood, and brings Northern Samar flavors to more homes.';
+    'To build on our success and high standards in the food industry. We plan to extend our operations and thereby generating more jobs to help more locality. We also have plan to generate a strong and long-term sustainable competitive advantage thus providing superior returns for our business partners.';
 
   readonly stats: StatCard[] = [
     { value: '2000', label: 'food brand established' },
     { value: '4', label: 'product families' },
-    { value: 'Local', label: 'Northern Samar roots' },
+    { value: 'Local', label: 'Calauan Laguna' },
   ];
 
   readonly values: ValueCard[] = [

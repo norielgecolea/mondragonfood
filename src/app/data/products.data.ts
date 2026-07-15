@@ -14,7 +14,7 @@ export const LAING_PRODUCTS: Product[] = [
     label: 'Spicy',
     src: 'assets/laing/laing-spicy.jpg',
     badgeClass: 'bg-red-600',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'Traditional Bicolano laing made from dried taro leaves, coconut milk, and chili peppers for a rich, creamy, and spicy flavor.',
     highlights: [
@@ -28,7 +28,7 @@ export const LAING_PRODUCTS: Product[] = [
     label: 'Original',
     src: 'assets/laing/laing-original.jpg',
     badgeClass: 'bg-green-700',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'A classic homemade laing with creamy coconut milk and aromatic spices, offering a well-balanced savory taste without the extra heat.',
     highlights: [
@@ -45,7 +45,7 @@ export const PUSO_NG_SAGING_PRODUCTS: Product[] = [
     label: 'Spicy',
     src: 'assets/puso-ng-saging/puso-ng-saging-spicy.jpg',
     badgeClass: 'bg-red-600',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'Tender banana blossom cooked in rich coconut milk and spicy chilies for a deliciously creamy Filipino favorite.',
     highlights: [
@@ -59,7 +59,7 @@ export const PUSO_NG_SAGING_PRODUCTS: Product[] = [
     label: 'Original',
     src: 'assets/puso-ng-saging/puso-ng-saging-original.jpg',
     badgeClass: 'bg-green-700',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'A comforting blend of banana blossom simmered in creamy coconut milk with traditional seasonings for a mild and satisfying meal.',
     highlights: [
@@ -76,7 +76,7 @@ export const SINANTULAN_PRODUCTS: Product[] = [
     label: 'Spicy',
     src: 'assets/sinantulan/sinantulan-spicy.jpg',
     badgeClass: 'bg-red-600',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'A spicy version of the beloved sinantulan made from ripe santol, chili peppers, and savory seasonings that add a bold kick to every meal.',
     highlights: [
@@ -90,7 +90,7 @@ export const SINANTULAN_PRODUCTS: Product[] = [
     label: 'Original',
     src: 'assets/sinantulan/sinantulan-original.jpg',
     badgeClass: 'bg-green-700',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'The signature Mondragon sinantulan featuring the perfect balance of sweet, tangy, and savory santol flavors.',
     highlights: [
@@ -104,7 +104,7 @@ export const SINANTULAN_PRODUCTS: Product[] = [
     label: 'Pure',
     src: 'assets/sinantulan/sinantulan-pure.jpg',
     badgeClass: 'bg-amber-500',
-    size: '330g jar',
+    size: '340G jar',
     description:
       'Pure santol goodness with a naturally tangy taste, crafted for those who enjoy the authentic flavor of fresh santol.',
     highlights: [
